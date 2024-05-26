@@ -2,7 +2,6 @@ package com.bravo.carrental.branch.controller;
 
 import com.bravo.carrental.branch.model.BranchDto;
 import com.bravo.carrental.branch.service.BranchService;
-import org.hibernate.validator.internal.constraintvalidators.hv.br.CNPJValidator;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,11 +13,10 @@ import java.util.List;
 @RequestMapping("/branches")
 public class BranchController {
     private final BranchService branchService;
-    private final CNPJValidator cnpjValidator;
 
-    public BranchController(BranchService branchService, CNPJValidator cnpjValidator) {
+    public BranchController(BranchService branchService) {
         this.branchService = branchService;
-        this.cnpjValidator = cnpjValidator;}
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<BranchDto> getItemById(@PathVariable Long id) {

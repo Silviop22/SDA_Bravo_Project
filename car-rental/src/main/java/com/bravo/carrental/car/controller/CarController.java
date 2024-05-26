@@ -1,7 +1,6 @@
 package com.bravo.carrental.car.controller;
 import com.bravo.carrental.car.model.CarDto;
 import com.bravo.carrental.car.service.CarService;
-import org.hibernate.validator.internal.constraintvalidators.hv.br.CNPJValidator;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,11 +20,10 @@ import java.util.List;
  public class CarController {
 
     private final CarService carService;
-    private final CNPJValidator cnpjValidator;
 
-    public CarController(CarService carService, CNPJValidator cnpjValidator) {
+    public CarController(CarService carService) {
             this.carService = carService;
-            this.cnpjValidator = cnpjValidator;}
+    }
 
         @GetMapping("/{id}")
         public ResponseEntity<CarDto> getItemById(@PathVariable Long id) {

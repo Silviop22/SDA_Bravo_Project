@@ -39,7 +39,7 @@ public class BranchService {
         String branchName = branchDto.getBranchName();
         String branchCity = branchDto.getBranchCity();
         if (branchRepository.findByBranchName(branchName).isPresent()
-                && branchRepository.findByCity(branchCity).isPresent()) {
+                && branchRepository.findByBranchCity(branchCity).isPresent()) {
             throw new IllegalArgumentException();}
         Branch branch = branchMapper.toEntity(branchDto);
         branch = branchRepository.save(branch);
