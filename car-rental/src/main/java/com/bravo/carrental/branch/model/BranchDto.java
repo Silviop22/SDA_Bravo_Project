@@ -2,12 +2,15 @@ package com.bravo.carrental.branch.model;
 
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import org.hibernate.mapping.List;
 
 @Data
 @Builder
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
 public class BranchDto {
     private BranchDto branchDto;
     @Id
