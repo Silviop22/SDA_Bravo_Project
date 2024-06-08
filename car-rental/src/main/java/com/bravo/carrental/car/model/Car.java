@@ -1,7 +1,9 @@
 package com.bravo.carrental.car.model;
+import com.bravo.carrental.reservation.Reservation;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Builder
 @Data
@@ -31,5 +33,8 @@ public class Car {
     private Enum status;
     @Column(name = "amount", nullable = false)
     private Integer amount;
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Reservation> reservationList;
 
 }
