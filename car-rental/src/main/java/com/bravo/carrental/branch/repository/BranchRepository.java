@@ -11,6 +11,6 @@ import java.util.Optional;
 @Repository
 public interface BranchRepository extends JpaRepository<Branch, Long> {
     Optional<Object> findByBranchName(String branchName);
-    Optional<Branch> findByBranchCity(String branchCity);
+    Optional<Branch> findByBranchCity(Enum branchCity);
     Page<Branch> findAll(Pageable pageable);
 }

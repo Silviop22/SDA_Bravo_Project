@@ -1,4 +1,4 @@
-package com.bravo.carrental.user.dto;
+package com.bravo.carrental.user.model;
 
 import lombok.Data;
 

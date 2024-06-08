@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 @Builder
 @Data
 @Entity
-@Table()
+@Table(name = "cars")
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
 public class Car {
@@ -14,9 +14,9 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "brand", nullable = false)
-    private String brand;
+    private Enum brand;
     @Column(name = "model", nullable = false)
-    private String model;
+    private Enum model;
     @Column(name = "price", nullable = false)
     private BigDecimal price;
     @Column(name = "service_cost", nullable = false)

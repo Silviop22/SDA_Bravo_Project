@@ -7,7 +7,7 @@ import org.hibernate.mapping.List;
 @Builder
 @Data
 @Entity
-@Table()
+@Table(name = "branches")
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
 public class Branch {
@@ -17,7 +17,7 @@ public class Branch {
     @Column(name = "branch_name", nullable = false)
     private String branchName;
     @Column(name = "branch_city", nullable = false)
-    private String branchCity;
+    private Enum branchCity;
     @Column(name = "list_of_employees", nullable = false)
     private List listOfEmployees;
     @Column(name = "list_of_cars", nullable = false)

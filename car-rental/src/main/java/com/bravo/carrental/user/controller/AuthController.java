@@ -1,7 +1,7 @@
 package com.bravo.carrental.user.controller;
 
-import com.bravo.carrental.user.dto.SignupRequest;
-import com.bravo.carrental.user.dto.UserDto;
+import com.bravo.carrental.user.model.SignupRequest;
+import com.bravo.carrental.user.model.UserDto;
 import com.bravo.carrental.user.services.AuthServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

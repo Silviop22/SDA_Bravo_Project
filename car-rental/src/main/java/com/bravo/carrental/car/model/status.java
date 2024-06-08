@@ -1,5 +1,5 @@
 package com.bravo.carrental.car.model;
 
-public enum Status {
+public enum status {
     RESERVED, AVAILABLE
 }

@@ -10,6 +10,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class CarService extends ObjectPatcher{
     private final CarRepository carRepository;
@@ -25,6 +27,21 @@ public class CarService extends ObjectPatcher{
                 .orElseThrow());}
 
     @Transactional
+    public CarDto findByPrice(BigDecimal price) {
+        return carMapper.toDto(carRepository.findByPrice((price))
+                .orElseThrow());}
+
+    @Transactional
+    public CarDto findByYear(Integer year) {
+        return carMapper.toDto(carRepository.findByYear((year))
+                .orElseThrow());}
+
+    @Transactional
+    public CarDto findByStatus(Enum status) {
+        return carMapper.toDto(carRepository.findByStatus((status))
+                .orElseThrow());}
+
+    @Transactional
     public Page<CarDto> getList(int page, int size) {
         Pageable pageble = PageRequest.of(page, size);
         return carRepository.findAll(pageble)
@@ -32,8 +49,8 @@ public class CarService extends ObjectPatcher{
 
     @Transactional
     public CarDto create(CarDto carDto) {
-        String brand = carDto.getBrand();
-        String model = carDto.getModel();
+        Enum brand = carDto.getBrand();
+        Enum model = carDto.getModel();
         if (carRepository.findByBrand(brand).isPresent()
                 && carRepository.findByModel(model).isPresent()) {
             throw new IllegalArgumentException();}
@@ -55,6 +72,5 @@ public class CarService extends ObjectPatcher{
         carRepository.deleteById((id));}
 
     private Car getExistingEntity(Long id) {
-        return carRepository.findById((id))
-                .orElseThrow();}
+        return carRepository.findById((id)).orElseThrow();}
 }

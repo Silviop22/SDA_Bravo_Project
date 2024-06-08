@@ -15,7 +15,7 @@ public class BranchDto {
     @NotBlank(message = "Branch name is mandatory", groups = BranchCreationValidation.class)
     private String branchName;
     @NotBlank(message = "Branch city is mandatory", groups = BranchCreationValidation.class)
-    private String branchCity;
+    private Enum branchCity;
     @NotBlank(message = "List of employees is mandatory", groups = BranchCreationValidation.class)
     private List listOfEmployees;
     @NotBlank(message = "List of cars is mandatory", groups = BranchCreationValidation.class)

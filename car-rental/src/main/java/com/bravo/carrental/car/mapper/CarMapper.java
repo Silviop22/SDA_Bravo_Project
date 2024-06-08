@@ -10,8 +10,7 @@ public class CarMapper implements ModelMapper<CarDto, Car> {
     @Override
     public Car toEntity(CarDto carDto) {
         if (carDto == null){return null;}
-        return Car.builder()
-                .id(carDto.getId())
+        return Car.builder().id(carDto.getId())
                 .brand(carDto.getBrand())
                 .model(carDto.getModel())
                 .price(carDto.getPrice())

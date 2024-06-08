@@ -16,9 +16,9 @@ public class CarDto {
     @Id
     private Long id;
     @NotBlank(message = "Brand is mandatory", groups = CarCreationValidation.class)
-    private String brand;
+    private Enum brand;
     @NotBlank(message = "Model is mandatory", groups = CarCreationValidation.class)
-    private String model;
+    private Enum model;
     @NotBlank(message = "Price is mandatory", groups = CarCreationValidation.class)
     private BigDecimal price;
     @NotBlank(message = "Service cost is mandatory", groups = CarCreationValidation.class)
@@ -34,5 +34,4 @@ public class CarDto {
     @NotBlank(message = "Amount is mandatory", groups = CarCreationValidation.class)
     private Integer amount;
 
-    public CarDto (){};
 }

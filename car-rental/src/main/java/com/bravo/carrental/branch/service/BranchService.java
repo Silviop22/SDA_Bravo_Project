@@ -37,7 +37,7 @@ public class BranchService {
     @Transactional
     public BranchDto create(BranchDto branchDto) {
         String branchName = branchDto.getBranchName();
-        String branchCity = branchDto.getBranchCity();
+        Enum branchCity = branchDto.getBranchCity();
         if (branchRepository.findByBranchName(branchName).isPresent()
                 && branchRepository.findByBranchCity(branchCity).isPresent()) {
             throw new IllegalArgumentException();}

@@ -6,11 +6,15 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 @Repository
 public interface CarRepository extends JpaRepository<Car, Long> {
     Page<Car> findAll(Pageable pageable);
-    Optional<Car> findByBrand(String brand);
-    Optional<Car> findByModel(String model);
+    Optional<Car> findByBrand(Enum brand);
+    Optional<Car> findByModel(Enum model);
+    Optional<Car> findByPrice(BigDecimal price);
+    Optional<Car> findByYear(Integer year);
+    Optional<Car> findByStatus(Enum status);
 }

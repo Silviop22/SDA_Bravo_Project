@@ -21,9 +21,7 @@ import java.util.List;
 
     private final CarService carService;
 
-    public CarController(CarService carService) {
-            this.carService = carService;
-    }
+    public CarController(CarService carService) {this.carService = carService;}
 
         @GetMapping("/{id}")
         public ResponseEntity<CarDto> getItemById(@PathVariable Long id) {
