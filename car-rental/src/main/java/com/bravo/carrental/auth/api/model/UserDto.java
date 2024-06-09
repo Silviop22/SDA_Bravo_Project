@@ -1,10 +1,5 @@
-package com.bravo.carrental.user.model;
+package com.bravo.carrental.auth.api.model;
 
-import com.bravo.carrental.car.model.CarCreationValidation;
-import com.bravo.carrental.car.model.CarDto;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;

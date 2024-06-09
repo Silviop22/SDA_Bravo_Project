@@ -3,7 +3,9 @@ package com.bravo.carrental.branch.model;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-import org.hibernate.mapping.List;
+import org.hibernate.mapping.Map;
+
+import java.util.List;
 
 @Data
 @Builder

@@ -1,4 +1,4 @@
-package com.bravo.carrental.user.model;
+package com.bravo.carrental.auth.api.model;
 
 import jakarta.persistence.*;
 import lombok.*;

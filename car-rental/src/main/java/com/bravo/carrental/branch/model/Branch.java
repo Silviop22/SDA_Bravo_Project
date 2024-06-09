@@ -3,6 +3,10 @@ package com.bravo.carrental.branch.model;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.mapping.List;
+import org.hibernate.mapping.Map;
+import org.hibernate.validator.constraints.UniqueElements;
+
+import java.util.ArrayList;
 
 @Builder
 @Data
