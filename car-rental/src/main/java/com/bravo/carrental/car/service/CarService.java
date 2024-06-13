@@ -1,5 +1,6 @@
 package com.bravo.carrental.car.service;
 
+import com.bravo.carrental.branch.service.ObjectPatcher;
 import com.bravo.carrental.car.mapper.CarMapper;
 import com.bravo.carrental.car.model.Car;
 import com.bravo.carrental.car.model.CarDto;
@@ -11,7 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CarService extends ObjectPatcher{
+public class CarService extends ObjectPatcher {
     private final CarRepository carRepository;
     private final CarMapper carMapper;
 

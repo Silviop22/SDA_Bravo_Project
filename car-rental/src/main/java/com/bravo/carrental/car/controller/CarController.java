@@ -4,6 +4,7 @@ import com.bravo.carrental.car.service.CarService;
 import org.hibernate.validator.internal.constraintvalidators.hv.br.CNPJValidator;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -47,10 +48,12 @@ import java.util.List;
         public ResponseEntity<Void> updateCar(@RequestBody CarDto carDto,
                                               @PathVariable Long id) {
             carService.update(carDto, id);
-            return ResponseEntity.noContent().build();}
+            return ResponseEntity.noContent().build();
+       }
 
         @DeleteMapping("/{id}")
         public ResponseEntity<Void> deleteCar(@PathVariable Long id) {
             carService.deleteById(id);
-            return ResponseEntity.noContent().build();}
+            return ResponseEntity.noContent().build();
+        }
     }

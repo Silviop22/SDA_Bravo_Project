@@ -1,4 +1,4 @@
-package com.bravo.carrental.car.service;
+package com.bravo.carrental;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
