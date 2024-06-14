@@ -5,6 +5,7 @@ import com.bravo.carrental.reservation.model.ReservationDto;
 import com.bravo.carrental.util.ModelMapper;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,8 +19,8 @@ public class ReservationMapper implements ModelMapper<ReservationDto, Reservatio
         return Reservation.builder()
                 .id(dto.getId())
                 .status(dto.getStatus())
-                .start_date(dto.getStart_date())
-                .end_date(dto.getEnd_date())
+                .startDate(LocalDate.parse(dto.getStart_date()))
+                .endDate(LocalDate.parse(dto.getEnd_date()))
                 .user(dto.getUser())
                 .car(dto.getCar())
                 .build();}
@@ -31,8 +32,8 @@ public class ReservationMapper implements ModelMapper<ReservationDto, Reservatio
         return ReservationDto.builder()
                 .id(entity.getId())
                 .status(entity.getStatus())
-                .start_date(entity.getStart_date())
-                .end_date(entity.getEnd_date())
+                .start_date(entity.getStartDate())
+                .end_date(entity.getEndDate())
                 .user(entity.getUser())
                 .car(entity.getCar())
                 .build();}

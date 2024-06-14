@@ -21,7 +21,6 @@ import java.io.IOException;
 
 @Component
 @RequiredArgsConstructor
-@AllArgsConstructor
 @NoArgsConstructor(force = true)
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 

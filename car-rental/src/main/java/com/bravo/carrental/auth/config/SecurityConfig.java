@@ -3,6 +3,7 @@ package com.bravo.carrental.auth.config;
 import com.bravo.carrental.auth.api.model.User;
 import com.bravo.carrental.auth.api.model.UserDto;
 import com.bravo.carrental.auth.api.service.UserService;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +30,7 @@ import org.springframework.web.filter.CorsFilter;
 @EnableWebSecurity
 @EnableMethodSecurity
 @RequiredArgsConstructor
+@NoArgsConstructor(force = true)
 public class SecurityConfig implements UserService {
     private final UserService userService;
 
