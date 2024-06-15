@@ -5,6 +5,7 @@ import com.bravo.carrental.car.model.Car;
 import com.bravo.carrental.car.model.CarCreationValidation;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import jdk.jshell.Snippet;
 import lombok.*;
 
 @Data
@@ -15,9 +16,6 @@ public class ReservationDto {
 
     @Id
     private Long id;
-
-    @NotBlank(message = "Status is mandatory", groups = ReservationValidation.class)
-    private Enum status;
 
     @NotBlank(message = "Starting date is mandatory", groups = CarCreationValidation.class)
     private String start_date;

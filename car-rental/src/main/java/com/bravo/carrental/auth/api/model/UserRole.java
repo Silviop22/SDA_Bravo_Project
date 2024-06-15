@@ -1,5 +1,5 @@
 package com.bravo.carrental.auth.api.model;
 
-public enum userRole {
+public enum UserRole {
     ADMIN, CUSTOMER, EMPLOYEE
 }

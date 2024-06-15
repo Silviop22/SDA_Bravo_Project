@@ -12,7 +12,6 @@ import java.math.BigDecimal;
 @Builder
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
 public class CarDto {
-    private CarDto carDto;
     @Id
     private Long id;
     @NotBlank(message = "Brand is mandatory", groups = CarCreationValidation.class)

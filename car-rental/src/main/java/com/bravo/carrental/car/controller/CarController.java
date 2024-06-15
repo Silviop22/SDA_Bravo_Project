@@ -23,30 +23,30 @@ import java.util.List;
 
     public CarController(CarService carService) {this.carService = carService;}
 
-        @GetMapping("/{id}")
-        public ResponseEntity<CarDto> getItemById(@PathVariable Long id) {
-            return ResponseEntity.ok(carService.getById(id));}
+    @GetMapping("/{id}")
+    public ResponseEntity<CarDto> getItemById(@PathVariable Long id) {
+        return ResponseEntity.ok(carService.getById(id));}
 
-        @GetMapping
-        public ResponseEntity<List<CarDto>> getItems(@RequestParam("page") int page,
-                                                     @RequestParam("size") int size) {
-            Page<CarDto> result = carService.getList(page, size);
-            return ResponseEntity.ok(result.getContent());}
+    @GetMapping()
+    public ResponseEntity<List<CarDto>> getItems(@RequestParam("page") int page,
+                                                 @RequestParam("size") int size) {
+        Page<CarDto> result = carService.getList(page, size);
+        return ResponseEntity.ok(result.getContent());}
 
-        @PostMapping
-        public ResponseEntity<Void> createCar(@RequestBody CarDto carDto) {
-            CarDto result = carService.create(carDto);
-            return ResponseEntity.created(URI.create("/cars/" + result.getId()))
-                    .build();}
+    @PostMapping
+    public ResponseEntity<Void> createCar(@RequestBody CarDto carDto) {
+        CarDto result = carService.create(carDto);
+        return ResponseEntity.created(URI.create("/cars/" + result.getId()))
+                .build();}
 
-        @PatchMapping("/{id}")
-        public ResponseEntity<Void> updateCar(@RequestBody CarDto carDto,
-                                              @PathVariable Long id) {
-            carService.update(carDto, id);
-            return ResponseEntity.noContent().build();}
+    @PatchMapping("/{id}")
+    public ResponseEntity<Void> updateCar(@RequestBody CarDto carDto,
+                                          @PathVariable Long id) {
+        carService.update(carDto, id);
+        return ResponseEntity.noContent().build();}
 
-        @DeleteMapping("/{id}")
-        public ResponseEntity<Void> deleteCar(@PathVariable Long id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCar(@PathVariable Long id) {
             carService.deleteById(id);
             return ResponseEntity.noContent().build();}
     }

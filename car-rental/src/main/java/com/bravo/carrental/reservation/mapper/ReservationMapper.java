@@ -18,9 +18,8 @@ public class ReservationMapper implements ModelMapper<ReservationDto, Reservatio
             return null;}
         return Reservation.builder()
                 .id(dto.getId())
-                .status(dto.getStatus())
-                .startDate(LocalDate.parse(dto.getStart_date()))
-                .endDate(LocalDate.parse(dto.getEnd_date()))
+                .start_date(dto.getStart_date())
+                .end_date(dto.getEnd_date())
                 .user(dto.getUser())
                 .car(dto.getCar())
                 .build();}
@@ -31,7 +30,6 @@ public class ReservationMapper implements ModelMapper<ReservationDto, Reservatio
             return null;}
         return ReservationDto.builder()
                 .id(entity.getId())
-                .status(entity.getStatus())
                 .start_date(entity.getStartDate())
                 .end_date(entity.getEndDate())
                 .user(entity.getUser())

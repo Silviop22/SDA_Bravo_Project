@@ -19,7 +19,5 @@ public class User {
     private String email;
     @Column(name = "password", nullable = false)
     private String password;
-    @Column(name = "user_role", nullable = false)
-    private Enum userRole;
 
 }

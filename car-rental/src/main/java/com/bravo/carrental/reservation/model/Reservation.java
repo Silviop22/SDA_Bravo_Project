@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 
 @Entity
 @Builder
@@ -19,12 +18,11 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "status", nullable = false)
-    private Enum status;
+
     @Column(name = "start_date", nullable = false)
-    private LocalDate startDate;
+    private String start_date;
     @Column(name = "end_date", nullable = false)
-    private LocalDate endDate;
+    private String end_date;
 
     @ManyToOne
     private User user;
@@ -35,14 +33,13 @@ public class Reservation {
     public Long getId() {
         return id;}
 
-    public Enum getStatus() {
-        return status;}
+
 
     public @NotBlank(message = "Starting date is mandatory", groups = CarCreationValidation.class) String getStartDate() {
-        return String.valueOf(startDate);}
+        return String.valueOf(start_date);}
 
     public @NotBlank(message = "End date is mandatory", groups = CarCreationValidation.class) String getEndDate() {
-        return String.valueOf(endDate);}
+        return String.valueOf(end_date);}
 
     public User getUser() {
         return user;}

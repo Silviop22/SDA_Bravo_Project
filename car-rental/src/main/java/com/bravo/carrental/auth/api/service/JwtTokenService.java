@@ -1,4 +1,4 @@
-package com.bravo.carrental.auth.api.service;
+/*package com.bravo.carrental.auth.api.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -50,4 +50,4 @@ public class JwtTokenService {
     private Claims extractAllClaims(String token) {
         return Jwts.parserBuilder().setSigningKey(getSignInKey()).build().parseClaimsJws(token).getBody();}
 
-}
+}*/
